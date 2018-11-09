@@ -25,7 +25,8 @@ document.onkeyup = function (event) {
    //the user picks a random letter from the alphabet
     var userGuess = event.key; 
     console.log(userGuess); 
-
+ 
+    // generate a random letter for the  computerGuess
     var computerGuess = alphabets[Math.floor(Math.random() * alphabets.length)]; 
     console.log(computerGuess); 
 
@@ -33,25 +34,43 @@ document.onkeyup = function (event) {
 
 
 
-    //if the user pick matches the computers pick
-    //up the win count by one
+    
     if (userGuess) {
+        
+
+        // saves every userGuess in an array 
         used.push(userGuess);
+       
+       //if the user pick matches the computers pick
         if (userGuess === computerGuess) {
+            
+            //up the win count by one
             wins++; 
+           
+            // reset attemps 
             attempts = 10; 
+            
+            // clear array 
             used = []; 
-            console.log(wins); 
+            // console.log(wins); 
         }
 
-
+             //if the user pick does not matches the computers pick
             else if (userGuess !== computerGuess) {
-
+                  
+                // decrmeant attemps by 1 
                 attempts -= 1; 
+                
+                // when user is out attempts 
                 if (attempts === 0) {
 
+                    // up the loss count by 1
                     losses ++ ; 
+                    
+                    // reset attemps 
                     attempts = 10; 
+                   
+                    // clear array 
                     used = []; 
                 }
 
@@ -78,7 +97,7 @@ document.onkeyup = function (event) {
         
 
 
-
+            // call the wins , losses , guesses left and the letter array 
             winsText.textContent = "wins: " + wins; 
             lossesText.textContent = "losses: " + losses; 
             guessesLeft.textContent = "guesses left: " + attempts; 
