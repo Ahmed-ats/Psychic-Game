@@ -1,7 +1,10 @@
+
+
+
 var wins = 0; 
 var losses = 0; 
 var attempts = 10; 
-var used = []; 
+var gussedLetters= []; 
 
 
 
@@ -18,8 +21,6 @@ var lettersUsed = document.getElementById("letters-used");
 
 
 
-
-
 document.onkeyup = function (event) {
    
    //the user picks a random letter from the alphabet
@@ -30,16 +31,12 @@ document.onkeyup = function (event) {
     var computerGuess = alphabets[Math.floor(Math.random() * alphabets.length)]; 
     console.log(computerGuess); 
 
-
-
-
-
     
     if (userGuess) {
         
 
         // saves every userGuess in an array 
-        used.push(userGuess);
+        gussedLetters.push(userGuess);
        
        //if the user pick matches the computers pick
         if (userGuess === computerGuess) {
@@ -51,7 +48,7 @@ document.onkeyup = function (event) {
             attempts = 10; 
             
             // clear array 
-            used = []; 
+            gussedLetters = []; 
             // console.log(wins); 
         }
 
@@ -71,29 +68,11 @@ document.onkeyup = function (event) {
                     attempts = 10; 
                    
                     // clear array 
-                    used = []; 
+                    gussedLetters = []; 
                 }
 
 
             }
-        
-                // if (used.indexOf(userGuess) >= 0) {
-
-                    
-                // }
-                // else {
-                    
-                //     used.push(userGuess); 
-                    
-                //     console.log(used); 
-                // }
-
-
-
-
-
-
-
         
 
 
@@ -101,7 +80,7 @@ document.onkeyup = function (event) {
             winsText.textContent = "wins: " + wins; 
             lossesText.textContent = "losses: " + losses; 
             guessesLeft.textContent = "guesses left: " + attempts; 
-            lettersUsed.textContent = "letters used: " + used; 
+            lettersUsed.textContent = "letters used: " + gussedLetters; 
            
             }
     }
