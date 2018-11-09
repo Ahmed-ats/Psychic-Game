@@ -1,0 +1,33 @@
+body {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCx6zLguhuZr3Dv0uJJRr0kZenwNXkUxgIelG2IBV-sCUaeszgbg");
+    font-family: 'Pacifico', cursive;
+    background-size: cover;
+    
+
+}
+ 
+h1 {
+    margin: 15px 0;    
+    font-size: 24px;
+     color:black;
+     text-align: center;
+        
+}
+
+p{
+
+    
+    font-size: 20px;
+    color: black;
+    text-align: center;
+        
+}
+
+.score { 
+   
+   margin: 5px 0;
+    color: rgb(167, 0, 0);
+   text-align: center;
+
+}
+
